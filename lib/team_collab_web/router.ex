@@ -60,7 +60,7 @@ defmodule TeamCollabWeb.Router do
       live "/messages/:id", MessageLive.Show, :show
       live "/messages/:id/edit", MessageLive.Form, :edit
 
-      #Tasks
+      # Tasks
       live "/tasks", TaskLive.Index, :index
       live "/tasks/new", TaskLive.Form, :new
       live "/tasks/:id", TaskLive.Show, :show
