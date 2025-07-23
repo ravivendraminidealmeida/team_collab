@@ -4,7 +4,7 @@ defmodule TeamCollab.Messaging.Message do
 
   schema "messages" do
     field :content, :string
-    field :user_id, :id
+    belongs_to :user, TeamCollab.Accounts.User
 
     timestamps(type: :utc_datetime)
   end
