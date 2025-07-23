@@ -9,6 +9,8 @@ defmodule TeamCollab.Accounts.User do
     field :confirmed_at, :utc_datetime
     field :authenticated_at, :utc_datetime, virtual: true
 
+    belongs_to :company, TeamCollab.Tenancy.Company
+
     timestamps(type: :utc_datetime)
   end
 
