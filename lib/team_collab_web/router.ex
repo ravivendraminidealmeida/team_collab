@@ -59,6 +59,13 @@ defmodule TeamCollabWeb.Router do
       live "/messages/new", MessageLive.Form, :new
       live "/messages/:id", MessageLive.Show, :show
       live "/messages/:id/edit", MessageLive.Form, :edit
+
+      #Tasks
+      live "/tasks", TaskLive.Index, :index
+      live "/tasks/new", TaskLive.Form, :new
+      live "/tasks/:id", TaskLive.Show, :show
+      live "/tasks/:id/edit", TaskLive.Form, :edit
+
     end
 
     post "/users/update-password", UserSessionController, :update_password
