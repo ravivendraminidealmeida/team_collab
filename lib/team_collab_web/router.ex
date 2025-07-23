@@ -46,7 +46,6 @@ defmodule TeamCollabWeb.Router do
   end
 
   ## Authentication routes
-
   scope "/", TeamCollabWeb do
     pipe_through [:browser, :require_authenticated_user]
 
@@ -54,6 +53,12 @@ defmodule TeamCollabWeb.Router do
       on_mount: [{TeamCollabWeb.UserAuth, :require_authenticated}] do
       live "/users/settings", UserLive.Settings, :edit
       live "/users/settings/confirm-email/:token", UserLive.Settings, :confirm_email
+
+      # Messages
+      live "/messages", MessageLive.Index, :index
+      live "/messages/new", MessageLive.Form, :new
+      live "/messages/:id", MessageLive.Show, :show
+      live "/messages/:id/edit", MessageLive.Form, :edit
     end
 
     post "/users/update-password", UserSessionController, :update_password
